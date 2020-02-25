@@ -1,4 +1,5 @@
 #import "TouchesViewController.h"
+#import <WebKit/WebKit.h>
 
 @interface TouchesViewController ()
 
@@ -9,6 +10,9 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view from its nib.
+    
+    WKWebView* webview = (WKWebView*) [self.view viewWithTag:1];
+    [webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString: @"https://www.google.com"]]];
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches
